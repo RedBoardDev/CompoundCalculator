@@ -1,4 +1,4 @@
-from algorithm.python_algo import calculate_optimum_compound_days, calculate_gross_rewards, calculate_nbrs_of_periods
+from python_algo import calculate_optimum_compound_days, calculate_gross_rewards, calculate_nbrs_of_periods
 from discord.ext import commands
 
 class Commands_all(commands.Cog):
@@ -8,19 +8,20 @@ class Commands_all(commands.Cog):
     async def received_message_cmd(self, ctx, initialInvestment:float, APR:int, frequency:str):
         await ctx.message.delete()
         frequency_list = ['monthly', 'daily', 'hourly', 'minute']
-        if (frequency in frequency_list):
-            if (initialInvestment > 0 and APR > 0):
-                # gasCost:float = get_actual_gasCost()
-                optimumCompoundDays:float = calculate_optimum_compound_days(frequency, gasCost, APR, initialInvestment)
-                message:str = "The best option is compound every " + (str)(round(optimumCompoundDays, 2)) + " " + frequency
-                optimum_nbrs_of_periods:float = calculate_nbrs_of_periods(frequency, optimumCompoundDays)
-                optimum_grossRewards:float = calculate_gross_rewards(optimum_nbrs_of_periods, gasCost, APR, initialInvestment)
-                messagee += "\nYou can earn " + (str)(round(optimum_grossRewards, 2)) + "$ in 1 year with this APR"
-                await ctx.author.send(messagee)
-            else:
-                await ctx.send("Error: please, dont put an equal at 0 or negatif initialInvestment / APR")
+        # if (frequency in frequency_list):
+        if (initialInvestment > 0 and APR > 0):
+            # gasCost:float = get_actual_gasCost()
+            gasCost:float = 0.1
+            optimumCompoundDays:float = calculate_optimum_compound_days(frequency, gasCost, APR, initialInvestment)
+            message:str = "The best option is compound every " + (str)(round(optimumCompoundDays, 2)) + " " + frequency
+            optimum_nbrs_of_periods:float = calculate_nbrs_of_periods(frequency, optimumCompoundDays)
+            optimum_grossRewards:float = calculate_gross_rewards(optimum_nbrs_of_periods, gasCost, APR, initialInvestment)
+            message += "\nYou can earn " + (str)(round(optimum_grossRewards, 2)) + "$ in 1 year with this APR"
+            await ctx.author.send(message)
         else:
-            await ctx.send("Error: wrong frequency.\nPlease use one on this list: monthly, daily, hourly, minute")
+            await ctx.send("Error: please, dont put an equal at 0 or negatif initialInvestment / APR")
+        # else:
+        #     await ctx.send("Error: wrong frequency.\nPlease use one on this list: monthly, daily, hourly, minute")
 
     @received_message_cmd.error
     async def received_message_error(self, ctx, error: commands.CommandError):
