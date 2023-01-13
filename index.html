@@ -8,82 +8,53 @@
 </head>
 	<body>
     	<div class="container">
-			<div class="header">Header (Absolute)</div>
+			<div class="header">
+				Header (Absolute)
+			</div>
 			<div class="sidebar-1">
 			<div class="sticky-spacer"></div>
-			<div class="sticky-content">Sidebar 1 Absolute position, Fixed width</div>
+			<div class="sticky-content">
+				Sidebar 1 Absolute position, Fixed width
+			</div>
 			</div>
 			<div class="content">
-			<div class="sticky-spacer"></div>
-			<div class="sticky-content">
-				Scrollable content<br><br>
-				line 1<br><br>
-			line 2<br><br>
-			line 3<br><br>
-			line 4<br><br>
-			line 5<br><br>
-			line 6<br><br>
-			line 7<br><br>
-			line 8<br><br>
-			line 1<br><br>
-			line 2<br><br>
-			line 3<br><br>
-			line 4<br><br>
-			line 5<br><br>
-			line 6<br><br>
-			line 7<br><br>
-			line 8<br><br>
-			line 1<br><br>
-			line 2<br><br>
-			line 3<br><br>
-			line 4<br><br>
-			line 5<br><br>
-			line 6<br><br>
-			line 7<br><br>
-			line 8<br><br>
-			line 1<br><br>
-			line 2<br><br>
-			line 3<br><br>
-			line 4<br><br>
-			line 5<br><br>
-			line 6<br><br>
-			line 7<br><br>
-			line 8<br><br>
-			line 1<br><br>
-			line 2<br><br>
-			line 3<br><br>
-			line 4<br><br>
-			line 5<br><br>
-			line 6<br><br>
-			line 7<br><br>
-			line 8<br><br>
-			line 1<br><br>
-			line 2<br><br>
-			line 3<br><br>
-			line 4<br><br>
-			line 5<br><br>
-			line 6<br><br>
-			line 7<br><br>
-			line 8<br><br>
-			</div>
-			</div>
+				<div class="sticky-spacer"></div>
+					<div class="sticky-content">
+						<h1 class="center" >Compound calculator</h1>
+						<h4 class="center">Optimise your investissement at the maximum with precision !</h4>
+						<div class="form-container">
+						<form class="calculator">
+							<label for="percentage">Enter the <b>APR</b> as a percent:<br>
+							<input type="number" id="percentage" name="percentage" min="0" step="0.01"><br>
+							<label for="number1">Enter the total of <b>fees</b> for compound in $:<br>
+							<input type="number" id="number1" name="number1" min="0"><br>
+							<label for="number2">Enter your <b>investissement</b> in $ :</label><br>
+							<input type="number" id="number2" name="number2" min="0"><br>
+							<div id="button-container">
+							  <button type="button" id="refresh-button">Rafraîchir</button>
+							  <button type="button" id="calculate-button">Calculer</button>
+							</div>
+							<div class="result">
+								<label for="result">The optimized <b>APY</b> is :</label><br>
+								<input type="text" id="result" name="result" min="0" disabled>
+								<label for="result1">The <b>best time to compound</b> is :</label><br>
+								<input type="text" id="result1" name="result" min="0" disabled>
+							</div>
+							<script src="scripts/main.js"></script>
+							<script src="scripts/algo.js"></script>
+						  </form>
+						  </div>
+					</div>
+				</div>
 			<div class="sidebar-2">
 			<div class="sticky-spacer"></div>
 			<div class="sticky-content">
 				Sidebar 2 Absolute position, Fixed width<br><br>
-			line 1<br><br>
-			line 2<br><br>
-			line 3<br><br>
-			line 4<br><br>
-			line 5<br><br>
-			line 6<br><br>
-			line 7<br><br>
-			line 8<br><br>
-			line 9<br><br>
-			line 10
 			</div>
 			</div>
-			<div class="footer">Footer (Absolute)</div>
+			<div class="footer">
+				Footer (Absolute)
+			</div>
 		</div>
   </body>
 </html>

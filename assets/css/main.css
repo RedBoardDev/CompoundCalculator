@@ -41,7 +41,7 @@ html, body {
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 0;
+    /* top: 0; */
     background-color: #BC514F;
 }
 
@@ -75,4 +75,74 @@ html, body {
         var(--padding)
         var(--padding);
     margin-top: calc(0px - var(--header-height));
+}
+
+.center {
+    text-align: center;
+}
+
+
+.form-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+form.calculator {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  form.calculator label {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+    margin-right: 7rem;
+    }
+
+  form.calculator input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  form.calculator input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+
+  form.calculator #button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+  form.calculator button[type="button"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+
+  form.calculator button[type="button"]:hover {
+    background-color: #ddd;
+}
+
+form.calculator button[type="button"]:active {
+    background-color: #ccc;
 }
